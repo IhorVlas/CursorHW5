@@ -29,14 +29,14 @@ public class Authentication {
 
     public static boolean verificationLogAndPass(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
         String range = "[0-9a-zA-Z_]{1,20}";
-        if ( (login.matches(range) && password.matches(range) && confirmPassword.equals(password)) ) {
+        if ((login.matches(range) && password.matches(range) && confirmPassword.equals(password))){
             System.out.println("Login and password OK");
             return true;
-        } else if ( !login.matches(range) ) {
+        } else if (!login.matches(range)){
             throw new WrongLoginException();
-        } else if ( !password.matches(range) ) {
+        } else if (!password.matches(range)){
             throw new WrongPasswordException();
-        } else if ( !confirmPassword.equals(password) ) {
+        } else if (!confirmPassword.equals(password)){
             throw new WrongPasswordException();
         }
         return false;
