@@ -27,7 +27,6 @@ public class Authentication {
         }
     }
 
-
     public static boolean verificationLogAndPass(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
         String range = "[0-9a-zA-Z_]{1,20}";
         if ((login.matches(range) && password.matches(range) && confirmPassword.equals(password))) {
